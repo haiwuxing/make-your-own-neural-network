@@ -19,8 +19,8 @@ class neuralNetwork:
         # weights inside tha arrays are w_i_j, where link is from node i to node j int eh next layer
         # w11 w21
         # w12 w22 etc
-        self.wih = numpy.random.rand(self.hnodes, self.inodes) - 0.5
-        self.who = numpy.random.rand(self.onodes, self.hnodes) - 0.5
+        self.wih = numpy.random.normal(0.0, pow(self.inodes, -0.5), (self.hnodes, self.inodes))
+        self.who = numpy.random.normal(0.0, pow(self.hnodes, -0.5), (self.onodes, self.hnodes))
     
     # train the neural network
     def train(self):
